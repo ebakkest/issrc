@@ -1,12 +1,15 @@
-; *** Inno Setup version 5.5.0+ Norwegian (bokmål) messages ***
+; *** Inno Setup version 6.1.0+ Norwegian (bokmål) messages ***
+;
+; To download user-contributed translations of this file, go to:
+;   https://jrsoftware.org/files/istrans/
 ;
 ; Note: When translating this text, do not add periods (.) to the end of
 ; messages that didn't have them already, because on those messages Inno
 ; Setup adds the periods automatically (appending a period would result in
 ; two periods being displayed).
 ;
-; Norwegian translation by Eivind Bakkestuen
-; E-mail: eivind@nexusdb.com
+; Norwegian translation currently maintained by Eivind Bakkestuen
+; E-mail: eivind.bakkestuen@gmail.com
 ; Many thanks to the following people for language improvements and comments:
 ;
 ; Harald Habberstad, Frode Weum, Morten Johnsen,
@@ -49,13 +52,22 @@ WindowsServicePackRequired=Dette programmet krever %1 Service Pack %2 eller nyer
 NotOnThisPlatform=Dette programmet kjører ikke på %1.
 OnlyOnThisPlatform=Dette programmet kjører kun på %1.
 OnlyOnTheseArchitectures=Dette programmet kan kun installeres i Windows-versjoner som er beregnet på følgende prossessorarkitekturer:%n%n%1
-MissingWOW64APIs=Din Windows-versjon mangler funksjonalitet for at installasjonsprogrammet skal gjøre en 64-bits-installasjon. Installer Service Pack %1 for å rette på dette.
-WinVersionTooLowError=Dette programmet krever %1 versjon %2 eller senere.
-WinVersionTooHighError=Dette programmet kan ikke installeres på %1 versjon %2 eller senere.
+WinVersionTooLowError=Dette programmet krever %1 versjon %2 eller nyere.
+WinVersionTooHighError=Dette programmet kan ikke installeres på %1 versjon %2 eller nyere.
 AdminPrivilegesRequired=Administrator-rettigheter kreves for å installere dette programmet.
 PowerUserPrivilegesRequired=Du må være logget inn som administrator eller ha administrator-rettigheter når du installerer dette programmet.
 SetupAppRunningError=Installasjonsprogrammet har funnet ut at %1 kjører.%n%nVennligst avslutt det nå og klikk deretter OK for å fortsette, eller Avbryt for å avslutte.
 UninstallAppRunningError=Avinstallasjonsprogrammet har funnet ut at %1 kjører.%n%nVennligst avslutt det nå og klikk deretter OK for å fortsette, eller Avbryt for å avslutte.
+
+; *** Startup questions
+PrivilegesRequiredOverrideTitle=Velg Installasjon Type
+PrivilegesRequiredOverrideInstruction=Installasjons Type
+PrivilegesRequiredOverrideText1=%1 kan installeres for alle brukere (krever administrator-rettigheter), eller bare for deg.
+PrivilegesRequiredOverrideText2=%1 kan installeres bare for deg, eller for alle brukere (krever administrator-rettigheter).
+PrivilegesRequiredOverrideAllUsers=Installer for &alle brukere
+PrivilegesRequiredOverrideAllUsersRecommended=Installer for &alle brukere (anbefalt)
+PrivilegesRequiredOverrideCurrentUser=Installer bare for &meg
+PrivilegesRequiredOverrideCurrentUserRecommended=Installer bare for &meg (anbefalt)
 
 ; *** Misc. errors
 ErrorCreatingDir=Installasjonsprogrammet kunne ikke lage mappen "%1"
@@ -68,12 +80,12 @@ AboutSetupMenuItem=&Om installasjonsprogrammet...
 AboutSetupTitle=Om installasjonsprogrammet
 AboutSetupMessage=%1 versjon %2%n%3%n%n%1 hjemmeside:%n%4
 AboutSetupNote=
-TranslatorNote=Norwegian translation maintained by Jostein Chr. Andersen (jostein@josander.net)
+TranslatorNote=Norwegian translation maintained by Eivind Bakkestuen (eivind.bakkestuen@gmail.com)
 
 ; *** Buttons
 ButtonBack=< &Tilbake
 ButtonNext=&Neste >
-ButtonInstall=&Installér
+ButtonInstall=&Installer
 ButtonOK=OK
 ButtonCancel=Avbryt
 ButtonYes=&Ja
@@ -87,7 +99,7 @@ ButtonNewFolder=&Lag ny mappe
 
 ; *** "Select Language" dialog messages
 SelectLanguageTitle=Velg installasjonsspråk
-SelectLanguageLabel=Velg språket som skal brukes under installasjonen:
+SelectLanguageLabel=Velg språket som skal brukes under installasjonen.
 
 ; *** Common wizard text
 ClickNext=Klikk på Neste for å fortsette, eller Avbryt for å avslutte installasjonen.
@@ -109,7 +121,7 @@ IncorrectPassword=Det angitte passordet er feil, vennligst prøv igjen.
 
 ; *** "License Agreement" wizard page
 WizardLicense=Lisensbetingelser
-LicenseLabel=Vennligst les følgende lisensinformasjon før du fortsetter.
+LicenseLabel=Vennligst les følgende viktig informasjon før du fortsetter.
 LicenseLabel3=Vennligst les følgende lisensbetingelser. Du må godta innholdet i lisensbetingelsene før du fortsetter med installasjonen.
 LicenseAccepted=Jeg &aksepterer lisensbetingelsene
 LicenseNotAccepted=Jeg aksepterer &ikke lisensbetingelsene
@@ -130,11 +142,12 @@ UserInfoOrg=&Organisasjon:
 UserInfoSerial=&Serienummer:
 UserInfoNameRequired=Du må angi et navn.
 
-; *** "Select Destination Directory" wizard page
+; *** "Select Destination Location" wizard page
 WizardSelectDir=Velg mappen hvor filene skal installeres:
 SelectDirDesc=Hvor skal [name] installeres?
 SelectDirLabel3=Installasjonsprogrammet vil installere [name] i følgende mappe.
 SelectDirBrowseLabel=Klikk på Neste for å fortsette. Klikk på Bla gjennom hvis du vil velge en annen mappe.
+DiskSpaceGBLabel=Programmet krever minst [gb] GB med diskplass.
 DiskSpaceMBLabel=Programmet krever minst [mb] MB med diskplass.
 CannotInstallToNetworkDrive=Kan ikke installere på en nettverksstasjon.
 CannotInstallToUNCPath=Kan ikke installere på en UNC-bane. Du må tilordne nettverksstasjonen hvis du vil installere i et nettverk.
@@ -162,6 +175,7 @@ NoUninstallWarningTitle=Komponenter eksisterer
 NoUninstallWarning=Installasjonsprogrammet har funnet ut at følgende komponenter allerede er på din maskin:%n%n%1%n%nDisse komponentene avinstalleres ikke selv om du ikke velger dem.%n%nVil du likevel fortsette?
 ComponentSize1=%1 KB
 ComponentSize2=%1 MB
+ComponentsDiskSpaceGBLabel=Valgte alternativer krever minst [gb] GB med diskplass.
 ComponentsDiskSpaceMBLabel=Valgte alternativer krever minst [mb] MB med diskplass.
 
 ; *** "Select Additional Tasks" wizard page
@@ -183,14 +197,26 @@ NoProgramGroupCheck2=&Ikke legg til mappe på start-menyen
 ; *** "Ready to Install" wizard page
 WizardReady=Klar til å installere
 ReadyLabel1=Installasjonsprogrammet er nå klar til å installere [name] på din maskin.
-ReadyLabel2a=Klikk Installér for å fortsette, eller Tilbake for å se på eller forandre instillingene.
-ReadyLabel2b=Klikk Installér for å fortsette.
+ReadyLabel2a=Klikk Installer for å fortsette, eller Tilbake for å se på eller forandre instillingene.
+ReadyLabel2b=Klikk Installer for å fortsette.
 ReadyMemoUserInfo=Brukerinformasjon:
 ReadyMemoDir=Installer i mappen:
 ReadyMemoType=Installasjonstype:
 ReadyMemoComponents=Valgte komponenter:
 ReadyMemoGroup=Programgruppe:
 ReadyMemoTasks=Tilleggsoppgaver:
+
+; *** TDownloadWizardPage wizard page and DownloadTemporaryFile
+DownloadingLabel=Laster ned ekstra filer...
+ButtonStopDownload=&Stopp nedlasting
+StopDownload=Er du sikker på at du vil stoppe nedlastingen?
+ErrorDownloadAborted=Nedlasting avbrutt
+ErrorDownloadFailed=Nedlasting feilet: %d %s
+ErrorDownloadSizeFailed=Kunne ikke finne filstørrelse: %d %s
+ErrorFileHash1=Fil hash verdi feilet: %s
+ErrorFileHash2=Ugyldig fil hash verdi: forventet %s, fant %s
+ErrorProgress=Ugyldig fremdrift: %d of %d
+ErrorFileSize=Ugyldig fil størrelse: forventet %d, fant %d
 
 ; *** "Preparing to Install" wizard page
 WizardPreparing=Forbereder installasjonen
@@ -199,8 +225,10 @@ PreviousInstallNotCompleted=Installasjonen/fjerningen av et tidligere program bl
 CannotContinue=Installasjonsprogrammet kan ikke fortsette. Klikk på Avbryt for å avslutte.
 ApplicationsFound=Disse applikasjonene bruker filer som vil oppdateres av installasjonen. Det anbefales å la installasjonen automatisk avslutte disse applikasjonene.
 ApplicationsFound2=Disse applikasjonene bruker filer som vil oppdateres av installasjonen. Det anbefales å la installasjonen automatisk avslutte disse applikasjonene. Installasjonen vil prøve å starte applikasjonene på nytt etter at installasjonen er avsluttet.
-CloseApplications=&Automatically close the applications
-DontCloseApplications=&Do not close the applications
+CloseApplications=Lukk applikasjonene &automatisk
+DontCloseApplications=&Ikke lukk applikasjonene
+ErrorCloseApplications=Installasjonsprogrammet kunne ikke lukke alle applikasjonene &automatisk. Det anbefales å lukke alle applikasjoner som bruker filer som installasjonsprogrammet trenger å oppdatere før du fortsetter installasjonen.
+PrepareToInstallNeedsRestart=Installasjonsprogrammet må gjøre omstart av maskinen. Etter omstart av maskinen, kjør installasjonsprogrammet på nytt for å ferdigstille installasjonen av [name].%n%nVil du gjøre omstart av maskinen nå?
 
 ; *** "Installing" wizard page
 WizardInstalling=Installerer
@@ -209,7 +237,7 @@ InstallingLabel=Vennligst vent mens [name] installeres på din maskin.
 ; *** "Setup Completed" wizard page
 FinishedHeadingLabel=Fullfører installasjonsprogrammet for [name]
 FinishedLabelNoIcons=[name] er installert på din maskin.
-FinishedLabel=[name] er installert på din maskin. Programmet kan kjøres ved at du klikker på et av de installerte ikonene.
+FinishedLabel=[name] er installert på din maskin. Programmet kan kjøres ved at du klikker på ett av de installerte ikonene.
 ClickFinish=Klikk Ferdig for å avslutte installasjonen.
 FinishedRestartLabel=Maskinen må startes på nytt for at installasjonen skal fullføres. Vil du starte på nytt nå?
 FinishedRestartMessage=Maskinen må startes på nytt for at installasjonen skal fullføres.%n%nVil du starte på nytt nå?
@@ -230,7 +258,10 @@ SelectDirectoryLabel=Vennligst angi hvor den neste disketten er.
 
 ; *** Installation phase messages
 SetupAborted=Installasjonen ble avbrutt.%n%nVennligst korriger problemet og prøv igjen.
-EntryAbortRetryIgnore=Klikk Prøv igjen for å forsøke på nytt, Ignorér for å fortsette eller Avslutt for å avslutte installasjonen.
+AbortRetryIgnoreSelectAction=Velg aksjon
+AbortRetryIgnoreRetry=&Prøv Igjen
+AbortRetryIgnoreIgnore=&Ignorer feil og fortsett
+AbortRetryIgnoreCancel=Cancel installation
 
 ; *** Installation status messages
 StatusClosingApplications=Lukker applikasjoner...
@@ -261,14 +292,24 @@ ErrorRegWriteKey=Feil under skriving til registernøkkel:%n%1\%2
 ErrorIniEntry=Feil under laging av innstilling i filen "%1".
 
 ; *** File copying errors
-FileAbortRetryIgnore=Klikk Prøv igjen for å forsøke på nytt, Ignorer for å overse denne filen (anbefales ikke) eller Avslutt for å stoppe installasjonen.
-FileAbortRetryIgnore2=Klikk Prøv igjen for å forsøke på nytt, Ignorer for å fortsette uansett (anbefales ikke) eller Avslutt for å stoppe installasjonen.
+FileAbortRetryIgnoreSkipNotRecommended=&Hopp over denne filen (ikke anbefalt)
+FileAbortRetryIgnoreIgnoreNotRecommended=&Ignorer feilen og fortsett (ikke anbefalt)
 SourceIsCorrupted=Kildefilen er ødelagt
 SourceDoesntExist=Kildefilen "%1" finnes ikke
-ExistingFileReadOnly=Den eksisterende filen er skrivebeskyttet.%n%nKlikk Prøv igjen for å fjerne skrivebeskyttelsen og prøve på nytt, Ignorer for å hoppe over denne filen, eller Avslutt for å stoppe installasjonen.
+ExistingFileReadOnly2=Den eksisterende filen er skrivebeskyttet og kan ikke erstattes.
+ExistingFileReadOnlyRetry=&Fjern skrivebeskyttelse og prøv igjen
+ExistingFileReadOnlyKeepExisting=&Behold eksisterende fil
 ErrorReadingExistingDest=En feil oppsto under lesing av den eksisterende filen:
-FileExists=Filen eksisterer allerede.%n%nVil du overskrive den?
-ExistingFileNewer=Den eksisterende filen er nyere enn den som blir forsøkt installert. Det anbefales at du beholder den eksisterende filen.%n%nVil du beholde den eksisterende filen?
+FileExistsSelectAction=Velg aksjon
+FileExists2=Filen eksisterer allerede.
+FileExistsOverwriteExisting=&Overskriv den eksisterende filen
+FileExistsKeepExisting=&Behold den eksisterende filen
+FileExistsOverwriteOrKeepAll=&Gjør samme valg for påfølgende konflikter
+ExistingFileNewerSelectAction=Velg aksjon
+ExistingFileNewer2=Den eksisterende filen er nyere enn filen Installasjonen prøver å installere.
+ExistingFileNewerOverwriteExisting=&Overskriv den eksisterende filen
+ExistingFileNewerKeepExisting=&Behold den eksisterende filen (anbefalt)
+ExistingFileNewerOverwriteOrKeepAll=&Gjør samme valg for påfølgende konflikter
 ErrorChangingAttr=En feil oppsto da attributtene ble forsøkt forandret på den eksisterende filen:
 ErrorCreatingTemp=En feil oppsto under forsøket på å lage en fil i mål-mappen:
 ErrorReadingSource=En feil oppsto under forsøket på å lese kildefilen:
@@ -279,6 +320,14 @@ ErrorRenamingTemp=En feil oppsto under omdøping av fil i mål-mappen:
 ErrorRegisterServer=Kan ikke registrere DLL/OCX: %1
 ErrorRegSvr32Failed=RegSvr32 gikk galt med avslutte kode %1
 ErrorRegisterTypeLib=Kan ikke registrere typebiblioteket: %1
+
+; *** Uninstall display name markings
+UninstallDisplayNameMark=%1 (%2)
+UninstallDisplayNameMarks=%1 (%2, %3)
+UninstallDisplayNameMark32Bit=32-bit
+UninstallDisplayNameMark64Bit=64-bit
+UninstallDisplayNameMarkAllUsers=Alle brukere
+UninstallDisplayNameMarkCurrentUser=Aktiv bruker
 
 ; *** Post-installation errors
 ErrorOpeningReadme=En feil oppsto under forsøket på å åpne LESMEG-filen.
